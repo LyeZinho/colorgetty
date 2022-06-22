@@ -9,12 +9,13 @@ import { Center, Square, Circle } from '@chakra-ui/react'
 import { Stack, HStack, VStack } from '@chakra-ui/react'
 import { Heading } from '@chakra-ui/react'
 import { Link } from '@chakra-ui/react'
+import { ColorModeScript } from '@chakra-ui/react'
 
 //Components
 import Color from '../components/color'
 import SponsorModal from '../components/sponsor'
 import GitButton from '../components/github'
-
+import theme from '../components/theme'
 
 export default function Home() {
   return (
@@ -25,7 +26,10 @@ export default function Home() {
         <link rel="icon" href="/icons/favicon.ico" />
       </Head>
 
-      
+      {/* Theme */}
+      <ColorModeScript initialColorMode={theme.config.initialColorMode} />
+
+      {/* Color Picker */}
       <Box p={5}>
         <Center>
           <Color  
@@ -35,11 +39,13 @@ export default function Home() {
           </Center>
       </Box>
       
+
+      {/* Footer */}
       <Box>
         <Center>
           <HStack>
-            <Heading size='lg' paddingBottom={3}>
-              © {new Date().getFullYear()}, By <Link href='https://github.com/LyeZinho' _hover={{color: 'black'}}>lyepedro</Link> with ❤!
+            <Heading size='sm' paddingBottom={3}>
+              © {new Date().getFullYear()} ColorGetty, Made by <Link href='https://github.com/LyeZinho' _hover={{color: '#f4ff00'}}>lyepedro</Link> with ❤!
             </Heading>
           </HStack>
         </Center>
